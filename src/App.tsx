@@ -9,6 +9,7 @@ const App = () => {
   useEffect(() => {
     const loadAll = async () => {
       setFeaturedData;
+      console.log(featuredData);
     };
     loadAll();
   }, []);
@@ -16,7 +17,30 @@ const App = () => {
   return (
     <div className="page">
       <Header />
-      {featuredData && <FeatureMovie item={featuredData} />}
+      <FeatureMovie
+        item={{
+          first_air_date: "",
+          genres: [],
+          overview: "",
+          backdrop_path: "",
+          original_name: "",
+          vote_average: 0,
+          number_of_seasons: 0,
+          id: 0,
+        }}
+      />
+
+      <footer>
+        Feito com{" "}
+        <span role="img" aria-label="coração">
+          {" "}
+          ❤️{" "}
+        </span>{" "}
+        por Victor Arcanjo.
+        <br />
+        Direitos de imagem para Netflix. <br />
+        Dados pegos do site <a href="https://themoviedb.org">themoviedb.org</a>;
+      </footer>
     </div>
   );
 };
