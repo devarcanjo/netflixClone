@@ -1,6 +1,6 @@
 import "./footer.scss";
 
-export const footer = () => (
+export const Footer = () => (
   <footer className="footer">
     <div className="footer__copyright">
       &copy; {new Date().getFullYear()} Made with ❤️ by{" "}
