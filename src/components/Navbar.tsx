@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
 import { useScroll } from "../hooks/useScroll";
 import Search from "../static/images/search-icon.svg";
 import NetflixLogo from "../static/images/Netflix_Logo_RGB.png";
@@ -45,7 +44,10 @@ const Navbar = () => {
             alt=""
           />
         </NavLink>
-        <DropdownArrow className="navigation__container--downArrow-2"></DropdownArrow>
+        <img
+          src={DropdownArrow}
+          className="navigation__container--downArrow-2"
+        />
         <div className="navigation__container-link pseudo-link">Home</div>
         <div className="navigation__container-link pseudo-link">TV Shows</div>
         <div className="navigation__container-link pseudo-link">Movies</div>
@@ -54,7 +56,7 @@ const Navbar = () => {
         </div>
         <div className="navigation__container-link pseudo-link">My List</div>
         <div className="navigation__container--left">
-          <Search className="logo" />
+          <img className="logo" src={Search} />
           <input
             ref={searchInput}
             value={userInput}
@@ -66,10 +68,10 @@ const Navbar = () => {
         </div>
         <div className="navigation__container-link pseudo-link">KIDS</div>
         <div className="navigation__container-link pseudo-link">DVD</div>
-        <BellLogo className="navigation__container--bellLogo" />
+        <img src={BellLogo} className="navigation__container--bellLogo" />
 
         <DropdownContent />
-        <DropdownArrow className="navigation__container--downArrow" />
+        <img src={DropdownArrow} className="navigation__container--downArrow" />
       </ul>
     </nav>
   );
