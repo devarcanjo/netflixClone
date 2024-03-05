@@ -28,22 +28,22 @@ const Header = ({ name, overview }: IHeader) => {
       />
       <h1 className="header__container-heading">{name}</h1>
       <Button
-        Icon={PlayLogo}
         buttonType={ButtonType.Primary}
         onClick={() => alert("not a movie!")}
         label={"Play"}
-      />
+      >
+        <img src={PlayLogo} alt="Play" />
+      </Button>
+      <Button buttonType={ButtonType.Secondary} label={"More Info"}>
+        <img src={MoreInfo} alt="More Info" />
+      </Button>
       <Button
-        Icon={MoreInfo}
-        buttonType={ButtonType.Secondary}
-        label={"More Info"}
-      />
-      <Button
-        Icon={isMuted ? MuteIcon : UnmuteIcon}
         buttonType={ButtonType.IconRound}
         onClick={() => setIsMuted(!isMuted)}
         customClassName={"header__container-btnVolume"}
-      />
+      >
+        <img src={isMuted ? MuteIcon : UnmuteIcon} alt="Volume" />
+      </Button>
       <p className="header__container-overview">{overview}</p>
       <div className="header__container--fadeBottom" />
     </header>
