@@ -1,7 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useViewport } from "../hooks/useViewport";
 import { IMovieDetails } from "../store/slices/movieDetailsSlice";
-// import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
+import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
+import SwiperCore from "swiper";
 
 interface IDisplayMovie {
   title: string;
@@ -11,7 +12,7 @@ interface IDisplayMovie {
 }
 
 // install Swiper components
-// SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const DisplayMovieRow = ({
   title,

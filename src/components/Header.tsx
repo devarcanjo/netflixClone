@@ -24,7 +24,7 @@ const Header = ({ name, overview }: IHeader) => {
         volume={1}
         muted={isMuted}
         className="header__video"
-        url="https://vimeo.com/916824226"
+        url="https://vimeo.com/134367421"
       />
       <h1 className="header__container-heading">{name}</h1>
       <Button
