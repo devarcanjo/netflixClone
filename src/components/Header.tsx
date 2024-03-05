@@ -24,22 +24,22 @@ const Header = ({ name, overview }: IHeader) => {
         volume={1}
         muted={isMuted}
         className="header__video"
-        url="https://vimeo.com/384025132"
+        url="https://vimeo.com/916824226"
       />
       <h1 className="header__container-heading">{name}</h1>
       <Button
-        Icon={<PlayLogo />}
+        Icon={PlayLogo}
         buttonType={ButtonType.Primary}
         onClick={() => alert("not a movie!")}
         label={"Play"}
       />
       <Button
-        Icon={<MoreInfo />}
+        Icon={MoreInfo}
         buttonType={ButtonType.Secondary}
         label={"More Info"}
       />
       <Button
-        Icon={isMuted ? <MuteIcon /> : <UnmuteIcon />}
+        Icon={isMuted ? MuteIcon : UnmuteIcon}
         buttonType={ButtonType.IconRound}
         onClick={() => setIsMuted(!isMuted)}
         customClassName={"header__container-btnVolume"}
