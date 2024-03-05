@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import "./button.scss";
 
 export enum ButtonType {
@@ -12,7 +13,7 @@ interface IButton {
   buttonType: ButtonType;
   label?: string;
   onClick?: () => void;
-  Icon?: JSX.Element;
+  icon: React.ReactElement;
   customClassName?: string;
 }
 
@@ -20,11 +21,11 @@ const Button = ({
   label,
   onClick,
   buttonType,
-  Icon,
+  icon,
   customClassName,
 }: IButton) => {
   const getIconClassName = (): "" | " with-icon" => {
-    return Icon ? " with-icon" : "";
+    return icon ? " with-icon" : "";
   };
 
   const getLabelClassName = (): "" | " with-label" => {
@@ -44,7 +45,7 @@ const Button = ({
       className={`n-button${getIconClassName()}${getLabelClassName()}${getCustomClassName()} ${getPrimaryClassName()}`}
       onClick={onClick}
     >
-      {Icon && Icon}
+      {icon && icon}
       {label && <span>{label}</span>}
     </button>
   );
