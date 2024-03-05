@@ -13,7 +13,7 @@ interface IButton {
   buttonType: ButtonType;
   label?: string;
   onClick?: () => void;
-  icon: React.ReactElement;
+  children: React.ReactNode;
   customClassName?: string;
 }
 
@@ -21,11 +21,11 @@ const Button = ({
   label,
   onClick,
   buttonType,
-  icon,
+  children,
   customClassName,
 }: IButton) => {
   const getIconClassName = (): "" | " with-icon" => {
-    return icon ? " with-icon" : "";
+    return children ? " with-icon" : "";
   };
 
   const getLabelClassName = (): "" | " with-label" => {
@@ -45,7 +45,7 @@ const Button = ({
       className={`n-button${getIconClassName()}${getLabelClassName()}${getCustomClassName()} ${getPrimaryClassName()}`}
       onClick={onClick}
     >
-      {icon && icon}
+      {children}
       {label && <span>{label}</span>}
     </button>
   );
