@@ -9,13 +9,16 @@ const initialState: { data: IMovieDetails[] } = {
   data: [],
 };
 
+const BASE_URL = "8c09c358295d3cbfafb494eb81747233";
+
+
 export const getNetflixOriginalsAsync = createAsyncThunk<
   any,
   void,
   { state: RootState }
 >("netflixOriginals/getNetflixOriginals", async () => {
   const response = await axios.get(
-    `/discover/tv?api_key=${process.env.API_KEY}&with_networks=213`
+    `/discover/tv?api_key=${BASE_URL}&with_networks=213`
   );
   return response.data.results;
 });

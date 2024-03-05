@@ -9,13 +9,16 @@ const initialState: { data: IMovieDetails[] } = {
   data: [],
 };
 
+const BASE_URL = "8c09c358295d3cbfafb494eb81747233";
+
+
 export const getDocumentariesAsync = createAsyncThunk<
   any,
   void,
   { state: RootState }
 >("documentary/getDocumentaries", async () => {
   const response = await axios.get(
-    `/discover/movie?api_key=${process.env.API_KEY}&with_genres=99`
+    `/discover/movie?api_key=${BASE_URL}&with_genres=99`
   );
   return response.data.results;
 });

@@ -9,13 +9,16 @@ const initialState: { data: IMovieDetails[] } = {
   data: [],
 }
 
+const BASE_URL = "8c09c358295d3cbfafb494eb81747233";
+
+
 export const getTrendingAsync = createAsyncThunk<
   any,
   void,
   { state: RootState }
 >('trending/getTrending', async () => {
   const response = await axios.get(
-    `/trending/all/week?api_key=${process.env.API_KEY}&language=en-US`
+    `/trending/all/week?api_key=${BASE_URL}&language=en-US`
   )
   return response.data.results
 })

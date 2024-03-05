@@ -47,6 +47,9 @@ const initialState: IInitialState = {
   },
 };
 
+const BASE_URL = "8c09c358295d3cbfafb494eb81747233";
+
+
 export const getMovieDetailsAsync = createAsyncThunk<
   any,
   { mediaType: string; mediaId: string },
@@ -54,9 +57,9 @@ export const getMovieDetailsAsync = createAsyncThunk<
 >("movieDetails/getMovieDetailsAsync", async ({ mediaType, mediaId }) => {
   let urlPath;
   if (mediaType === media_type.movie)
-    urlPath = `/movie/${mediaId}?api_key=${process.env.API_KEY}`;
+    urlPath = `/movie/${mediaId}?api_key=${BASE_URL}`;
   if (mediaType === media_type.tv)
-    urlPath = `/tv/${mediaId}?api_key=${process.env.API_KEY}`;
+    urlPath = `/tv/${mediaId}?api_key=${BASE_URL}`;
   const response = await axios.get(urlPath ?? "");
   return response.data;
 });

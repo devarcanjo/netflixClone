@@ -9,13 +9,15 @@ const initialState = {
   isLoading: true,
 };
 
+const BASE_URL = "8c09c358295d3cbfafb494eb81747233";
+
 export const searchItemsAsync = createAsyncThunk<
   any,
   string,
   { state: RootState }
 >("search/getSearchItems", async (searchTerm) => {
   const response = await axios.get(
-    `/search/multi?api_key=${process.env.API_KEY}&language=en-US&include_adult=false&query=${searchTerm}`
+    `/search/multi?api_key=${BASE_URL}&language=en-US&include_adult=false&query=${searchTerm}`
   );
   return response.data.results;
 });
